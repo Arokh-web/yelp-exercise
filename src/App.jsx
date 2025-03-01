@@ -10,13 +10,12 @@ import NotFound from "./pages/NotFound";
 import Imprint from "./pages/Imprint";
 import AboutUs from "./pages/Aboutus";
 import Contact from "./pages/Contact";
+import FullRestaurants from "./pages/FullRestaurants";
 
 function App() {
   return (
     <div>
       <Router>
-        <Header />
-
         {/* ROUTES */}
         <Routes>
           <Route path="/" element={<Home />} />
@@ -25,6 +24,7 @@ function App() {
           <Route path="/imprint" element={<Imprint />} />
           <Route path="/aboutus" element={<AboutUs />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/fullrestaurants" element={<FullRestaurants />} />
 
           <Route
             path="/restaurantdetails/:id"
