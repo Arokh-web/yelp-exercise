@@ -1,7 +1,9 @@
-import React from "react";
+import * as Leaflet from 'leaflet';
 
 const Map = () => {
-  return <div>Map</div>;
-};
+  return (
+    <div>Map</div>
+  )
+}
 
-export default Map;
+export default Map

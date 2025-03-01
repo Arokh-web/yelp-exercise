@@ -1,34 +1,39 @@
-import React from "react";
-import { Routes, Route } from "react-router-dom";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import { Router } from "react-router-dom";
+import {BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import "./App.css";
+import Home from "./pages/Home";
+import RestaurantDetails from "./pages/RestaurantDetails";
+import NotFound from "./components/NotFound";
 
-function App() {
+const App = () => {
   return (
-    <div>
-      <Router>
-        <Header />
-        <CategoriesBar />
+    <Router>
+      <Routes>
 
-        {/* ROUTES */}
+        <Route path="/" element={ <Home/>} />
+        <Route path="/restaurantdetails" element={ <RestaurantDetails/>} />
+        
+        {/* Fallback to non-existing routes */}
+        <Route path="*" element={ <NotFound /> } />
+      
+      </Routes>
+    </Router>
+  )
+}
+
+export default App;
+
+{/* <Router>
+        <Header />
+
+        
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/restaurantdetails" element={<RestaurantDetails />} />
           <Route path="/searchresult" element={<SearchResult />} />
-          <Route
-            path="/restaurantdetails/[id]"
-            element={<RestaurantDetails />}
-          />
+          <Route path="/restaurantdetails/[id]" element={<RestaurantDetails />}/>
 
-          {/* FALLBACK */}
+    
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
-      </Router>
-    </div>
-  );
-}
-
-export default App;
+      </Router> */}
