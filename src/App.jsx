@@ -10,7 +10,7 @@ function App() {
     <div>
       <Router>
         <Header />
-        <CategoriesBar />
+
 
         {/* ROUTES */}
         <Routes>
