@@ -2,7 +2,6 @@ import React from "react";
 import FindSearchBar from "./FindSearchBar";
 import NearSearchBar from "./NearSearchBar";
 import MenuBar from "./MenuBar";
-import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -21,10 +20,7 @@ const Header = () => {
           <FindSearchBar />
           <NearSearchBar />
         </div>
-        <MenuBar />{" "}
-        <Link to="searchresult">
-          <button className="btn btn-ghost">TestCard</button>
-        </Link>
+        <MenuBar />
       </header>
     </div>
   );

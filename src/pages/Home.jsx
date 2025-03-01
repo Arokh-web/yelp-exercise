@@ -1,9 +1,11 @@
 import React from "react";
+import SearchResult from "./SearchResult";
 
 const Home = () => {
   return (
     <div>
-      <p>Home: RestaurantCards will be displayed here</p>Home
+      <p></p>
+      <SearchResult />
     </div>
   );
 };

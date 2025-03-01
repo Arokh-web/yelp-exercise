@@ -25,9 +25,9 @@ function App() {
           <Route path="/imprint" element={<Imprint />} />
           <Route path="/aboutus" element={<AboutUs />} />
           <Route path="/contact" element={<Contact />} />
-          
+
           <Route
-            path="/restaurantdetails/[id]"
+            path="/restaurantdetails/:id"
             element={<RestaurantDetails />}
           />
 
