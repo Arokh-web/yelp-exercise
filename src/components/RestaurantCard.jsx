@@ -5,8 +5,6 @@ const RestaurantCard = ({ restaurant }) => {
   console.log("Resto:", restaurant);
   return (
     <div className="flex flex-wrap justify-center">
-      <h1>{JSON.stringify(restaurant)}</h1>
-      {/* {restaurants.map((restaurant) => ( */}
       <div
         key={restaurant.id}
         className="mb-8 m-2 border-2 rounded-2xl card card-side bg-base-100 w-1/2 max-h-64 shadow-sm p-4"
@@ -29,7 +27,6 @@ const RestaurantCard = ({ restaurant }) => {
           </div>
         </div>
       </div>
-      {/* ))} */}
     </div>
   );
 };
