@@ -7,7 +7,7 @@ const FullRestaurants = ({ restaurants }) => {
   return (
     <div className="container mx-auto p-4">
       <p className="text-4xl font-mono m-7">Full List of Restaurants</p>
-      <FilterBar />
+      <FilterBar restaurants={restaurants}/>
       {restaurants &&
         restaurants.map((restaurant, id) => {
           return <RestaurantCard key={id} restaurant={restaurant} />;

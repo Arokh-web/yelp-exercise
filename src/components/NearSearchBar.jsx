@@ -1,6 +1,19 @@
 import React from "react";
+import { useState } from "react";
 
-const NearSearchBar = () => {
+const NearSearchBar = ({ data, setter }) => {
+  const [results, setResults] = useState([]);
+  const [userInput, setUserInput] = useState("");
+
+  const handleSearch = (e) => {
+    const dataTest = data.filter((item) => {
+      return item.category.toLowerCase().includes(userInput.toLowerCase());
+    });
+
+    setter(dataTest);
+    console.log(dataTest);
+  };
+
   return (
     <div>
       <label className="input">
@@ -20,9 +33,16 @@ const NearSearchBar = () => {
             <path d="m21 21-4.3-4.3"></path>
           </g>
         </svg>
-        <input type="search" className="grow" placeholder="Search" />
-        <kbd className="kbd kbd-sm">⌘</kbd>
-        <kbd className="kbd kbd-sm">K</kbd>
+        <input
+          value={userInput}
+          onChange={(e) => setUserInput(e.target.value)}
+          type="search"
+          className="grow"
+          placeholder="Search for City"
+        />
+        <button onClick={handleSearch} className="btn btn-ghost">
+          Search
+        </button>
       </label>
     </div>
   );

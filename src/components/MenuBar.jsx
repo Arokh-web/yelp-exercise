@@ -5,6 +5,9 @@ const MenuBar = () => {
   return (
     <div>
       <button className="btn btn-ghost">
+        <Link to="/">Home</Link>
+      </button>
+      <button className="btn btn-ghost">
         <Link to="fullrestaurants">Restaurants</Link>
       </button>
     </div>

@@ -18,7 +18,7 @@ const Header = ({ restaurants, setter }) => {
         </div>
         <div className="flex items-center justify-center space-x-25">
           <FindSearchBar data={restaurants} setter={setter} />
-          <NearSearchBar />
+          <NearSearchBar data={restaurants} setter={setter} />
         </div>
         <MenuBar />
       </header>

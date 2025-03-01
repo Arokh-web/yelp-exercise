@@ -38,10 +38,10 @@ const FindSearchBar = ({ data, setter }) => {
           onChange={(e) => setUserInput(e.target.value)}
           type="search"
           className="grow"
-          placeholder="Search"
+          placeholder="Search for Restaurant"
         />
         <button onClick={handleSearch} className="btn btn-ghost">
-          Src
+          Search
         </button>
       </label>
     </div>

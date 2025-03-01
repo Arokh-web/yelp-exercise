@@ -11,14 +11,33 @@ import Imprint from "./pages/Imprint";
 import AboutUs from "./pages/Aboutus";
 import Contact from "./pages/Contact";
 import FullRestaurants from "./pages/FullRestaurants";
+import { useState, useEffect } from "react";
 
 function App() {
+  const [restaurants, setRestaurants] = useState([]);
+  const [searchResult, setSearchResults] = useState(null);
+
+  useEffect(() => {
+    fetch("https://fakestoreapi.com/products")
+      .then((response) => response.json())
+      .then((data) => {
+        setRestaurants(data);
+        console.log("Restaurants", data);
+      });
+  }, []);
+
   return (
     <div>
       <Router>
+        <Header restaurants={restaurants} setter={setSearchResults} />
         {/* ROUTES */}
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route
+            path="/"
+            element={
+              <Home searchResult={searchResult} restaurants={restaurants} />
+            }
+          />
           <Route path="/restaurantdetails" element={<RestaurantDetails />} />
           <Route path="/searchresult" element={<SearchResult />} />
           <Route path="/imprint" element={<Imprint />} />
