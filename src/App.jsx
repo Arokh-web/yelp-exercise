@@ -10,19 +10,22 @@ import NotFound from "./pages/NotFound";
 import Imprint from "./pages/Imprint";
 import AboutUs from "./pages/Aboutus";
 import Contact from "./pages/Contact";
+import FullRestaurants from "./pages/FullRestaurants";
 
 const App = () => {
   return (
     <Router>
+      <Header/>
       <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/restaurantdetails" element={<RestaurantDetails />} />
+          <Route path="/fullrestaurants" element={<FullRestaurants />} />
           <Route path="/searchresult" element={<SearchResult />} />
           <Route path="/imprint" element={<Imprint />} />
           <Route path="/aboutus" element={<AboutUs />} />
           <Route path="/contact" element={<Contact />} />
 
-          <Route path="/restaurantdetails/:id" element={<RestaurantDetails />}/>
+          {/* <Route path="/restaurantdetails/:id" element={<RestaurantDetails />}/> */}
     
           <Route path="*" element={<NotFound />} />
         </Routes>

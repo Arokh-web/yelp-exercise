@@ -20,7 +20,9 @@ const Header = () => {
           <FindSearchBar />
           <NearSearchBar />
         </div>
-        <MenuBar />
+        <div className="mt-6">
+          <MenuBar />
+        </div>
       </header>
     </div>
   );
