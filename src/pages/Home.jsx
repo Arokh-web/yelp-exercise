@@ -1,8 +1,13 @@
+import React from "react";
+import SearchResult from "./SearchResult";
+
 const Home = () => {
   return (
-      <h1>Home</h1>
-    
-  )
+    <div>
+      <p></p>
+      <SearchResult />
+    </div>
+  );
 };
 
 export default Home;

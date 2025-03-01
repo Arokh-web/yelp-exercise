@@ -1,39 +1,34 @@
-import {BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import React from "react";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Home from "./pages/Home";
 import RestaurantDetails from "./pages/RestaurantDetails";
-import NotFound from "./components/NotFound";
+import SearchResult from "./pages/SearchResult";
+import NotFound from "./pages/NotFound";
+import Imprint from "./pages/Imprint";
+import AboutUs from "./pages/Aboutus";
+import Contact from "./pages/Contact";
 
 const App = () => {
   return (
     <Router>
       <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/restaurantdetails" element={<RestaurantDetails />} />
+          <Route path="/searchresult" element={<SearchResult />} />
+          <Route path="/imprint" element={<Imprint />} />
+          <Route path="/aboutus" element={<AboutUs />} />
+          <Route path="/contact" element={<Contact />} />
 
-        <Route path="/" element={ <Home/>} />
-        <Route path="/restaurantdetails" element={ <RestaurantDetails/>} />
-        
-        {/* Fallback to non-existing routes */}
-        <Route path="*" element={ <NotFound /> } />
-      
-      </Routes>
+          <Route path="/restaurantdetails/:id" element={<RestaurantDetails />}/>
+    
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+        <Footer />
     </Router>
   )
 }
 
 export default App;
-
-{/* <Router>
-        <Header />
-
-        
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/restaurantdetails" element={<RestaurantDetails />} />
-          <Route path="/searchresult" element={<SearchResult />} />
-          <Route path="/restaurantdetails/[id]" element={<RestaurantDetails />}/>
-
-    
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-        <Footer />
-      </Router> */}
